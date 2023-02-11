@@ -3,6 +3,7 @@ import { useState } from "react";
 import "./App.css";
 import AppHeader from "./components/AppHeader";
 import AppScreen from "./components/AppScreen";
+import CreateScreen from "./screens/CreateScreen";
 import MainScreen from "./screens/MainScreen";
 function App() {
   const [walletAddress, setWalletAddress] = useState(null);
@@ -34,10 +35,10 @@ function App() {
   return (
     <AppScreen>
       <AppHeader onClickWallet={getWalletData} address={walletAddress} setWalletAddress={setWalletAddress} balance={walletBalance} />
-      <MainScreen />
+      {/* <MainScreen /> */}
       {/* <ProfileScreen /> */}
       {/* <SubmittionScreen /> */}
-      {/* <CreateScreen /> */}
+      <CreateScreen />
     </AppScreen>
   );
 }
