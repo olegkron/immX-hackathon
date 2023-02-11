@@ -9,7 +9,7 @@ function AppHeader({ onClickWallet, address, balance }) {
   return (
     <div style={{ flexDirection: "row", display: "flex", justifyContent: "space-between", paddingHorizontal: 25, alignItems: "center" }}>
       <div style={{ flexDirection: "row", display: "flex", alignItems: "center" }}>
-        <Button style={{ marginRight: 15, fontSize: 20, marginTop: 15 }}>
+        <Button style={{ marginRight: 15, fontSize: 20 }}>
           <Plus size={24} style={{ marginRight: 10 }} />
           <p style={{ fontSize: 20 }}>CREATE COMPETITION</p>
         </Button>
