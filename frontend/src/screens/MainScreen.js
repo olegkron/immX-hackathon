@@ -20,10 +20,11 @@ function MainScreen() {
           <AppCard style={{ marginRight: 20 }} title={"Logo task"} subtitle={"Intel"} />
         </div>
 
-        <div style={{ flexDirection: "row", marginTop: 40 }}>
-          <AppCard style={{ marginRight: 20 }} title={"Logo task"} subtitle={"Intel"} />
-          <AppCard style={{ marginRight: 20 }} title={"Logo task"} subtitle={"Intel"} />
-          <AppCard style={{ marginRight: 20 }} title={"Logo task"} subtitle={"Intel"} />
+        <TextEyebrow style={{ marginTop: 80 }}>COMPETITION HISTORY</TextEyebrow>
+        <div style={{ flexDirection: "row" }}>
+          <AppCard won style={{ marginRight: 20 }} title={"Logo task"} subtitle={"Intel"} />
+          <AppCard won style={{ marginRight: 20 }} title={"Logo task"} subtitle={"Intel"} />
+          <AppCard lost style={{ marginRight: 20 }} title={"Logo task"} subtitle={"Intel"} />
         </div>
       </div>
     </>
