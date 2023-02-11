@@ -5,8 +5,6 @@ import AppCard from "../components/AppCard";
 import Button from "../components/Button";
 
 import colors from "../constants/colors";
-import TextBigSubtitle from "../text/BigSubtitle";
-import TextEyebrow from "../text/TextEyebrow";
 import TextH1 from "../text/TextH1";
 // import colors from "../constants/colors";
 // import TextBigSubtitle from "../text/BigSubtitle";
@@ -14,53 +12,30 @@ import TextH1 from "../text/TextH1";
 
 function SubmittionScreen() {
   return (
-    <div style={{ flexDirection: "row", flex: 1, marginTop: 60, display: "flex" }}>
-      <TextH1 underline>Submittion Title</TextH1>
-      {/* <div style={{ flex: 3 }}>
-        <p style={{ fontWeight: "bold", fontSize: 20 }}>PROFILE</p>
-        <div style={{ width: 385, height: 385, marginTop: 30, marginBottom: 30, borderRadius: 17, backgroundColor: colors.darkGrey }} />
-        <p style={{ fontWeight: "bold", fontSize: 64 }}>JOHN DOE</p>
-        <Button style={{ width: 155, marginTop: 25 }}>
-          <p style={{ fontWeight: "regilar", fontSize: 32 }}>Artist</p>
-        </Button>
-        <div style={{ width: "70%" }}>
-          <div style={{ flexDirection: "row", marginTop: 65, justifyContent: "space-between" }}>
-            <p style={{ fontWeight: "bold", fontSize: 20, color: colors.lightGrey }}>JOINED</p>
+    <div style={{ flexDirection: "row", flex: 1, marginTop: 60, display: "flex", marginBottom: 100 }}>
+      <div style={{ flex: 1 }}>
+        <TextH1 underline>Submittion Title</TextH1>
+        <p style={{ maxWidth: 750, fontSize: 30, marginTop: 50, marginBottom: 60 }}>
+          {`Submission Description Aliquam erat volutpat. Etiam nisi risus, neleifend eget ornare eget, fringilla eget.
+             Aliquam erat volutpat. Etiam nisi risus, eleifend eget ornare eget, fringilla eget.`}
+        </p>
+        <div style={{ width: 500, height: 1, backgroundColor: colors.darkGrey }} />
+        <div style={{ maxWidth: 450 }}>
+          <div style={{ flexDirection: "row", justifyContent: "space-between", marginTop: 100 }}>
+            <p style={{ fontWeight: "bold", fontSize: 20, color: colors.lightGrey }}>SUBMITTED ON</p>
             <p style={{ fontWeight: "bold", fontSize: 20, color: colors.white, marginLeft: 100 }}>12 FEB, 2023</p>
           </div>
           <div style={{ flexDirection: "row", marginTop: 25, justifyContent: "space-between" }}>
-            <p style={{ fontWeight: "bold", fontSize: 20, color: colors.lightGrey }}>SUBMITTIONS</p>
-            <p style={{ fontWeight: "bold", fontSize: 20, color: colors.white, marginLeft: 100 }}>15</p>
+            <p style={{ fontWeight: "bold", fontSize: 20, color: colors.lightGrey }}>AUTHOR</p>
+            <p style={{ fontWeight: "bold", fontSize: 20, color: colors.white, marginLeft: 100 }}>AUTHOR NAME</p>
           </div>
-          <div style={{ flexDirection: "row", marginTop: 25, justifyContent: "space-between" }}>
-            <p style={{ fontWeight: "bold", fontSize: 20, color: colors.lightGrey }}>PRIZES WON</p>
-            <p style={{ fontWeight: "bold", fontSize: 20, color: colors.white, marginLeft: 100 }}>3</p>
-          </div>
+          <Button style={{ marginTop: 120 }}>
+            <p style={{ fontWeight: "bold", fontSize: 20 }}>PICK AS A WINNER</p>
+          </Button>
         </div>
       </div>
-      <div style={{ flex: 6 }}>
-        <p style={{ fontWeight: "bold", fontSize: 20 }}>REWARDS</p>
-        <div style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 30 }}>
-          <AppCard style={{ marginRight: 20, marginBottom: 30 }} title={"Logo task"} subtitle={"Intel"}>
-            <div style={{ width: 385, height: 385, backgroundColor: colors.darkGrey }} />
-          </AppCard>
-          <AppCard style={{ marginRight: 20, marginBottom: 30 }} title={"Logo task"} subtitle={"Intel"}>
-            <div style={{ width: 385, height: 385, backgroundColor: colors.darkGrey }} />
-          </AppCard>
-          <AppCard style={{ marginRight: 20, marginBottom: 30 }} title={"Logo task"} subtitle={"Intel"}>
-            <div style={{ width: 385, height: 385, backgroundColor: colors.darkGrey }} />
-          </AppCard>
-          <AppCard style={{ marginRight: 20, marginBottom: 30 }} title={"Logo task"} subtitle={"Intel"}>
-            <div style={{ width: 385, height: 385, backgroundColor: colors.darkGrey }} />
-          </AppCard>
-          <AppCard style={{ marginRight: 20, marginBottom: 30 }} title={"Logo task"} subtitle={"Intel"}>
-            <div style={{ width: 385, height: 385, backgroundColor: colors.darkGrey }} />
-          </AppCard>
-          <AppCard style={{ marginRight: 20, marginBottom: 30 }} title={"Logo task"} subtitle={"Intel"}>
-            <div style={{ width: 385, height: 385, backgroundColor: colors.darkGrey }} />
-          </AppCard>
-        </div>
-      </div> */}
+
+      <div style={{ border: "2px solid white", backgroundColor: colors.grey, borderRadius: 10, marginBottom: 40, flex: 1 }}></div>
     </div>
   );
 }

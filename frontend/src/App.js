@@ -4,6 +4,7 @@ import "./App.css";
 import AppHeader from "./components/AppHeader";
 import AppScreen from "./components/AppScreen";
 import ProfileScreen from "./screens/ProfileScreen";
+import SubmittionScreen from "./screens/SubmittionScreen";
 function App() {
   const [address, setAddress] = useState("");
   const [starkPublicKey, setStarkPublicKey] = useState("");
@@ -24,9 +25,10 @@ function App() {
   };
   return (
     <AppScreen>
-      <AppHeader onClickWallet={getWalletData} address={address} balance={balance} />
+      <AppHeader />
       {/* <MainScreen /> */}
-      <ProfileScreen />
+      {/* <ProfileScreen /> */}
+      <SubmittionScreen />
     </AppScreen>
   );
 }

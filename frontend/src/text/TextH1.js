@@ -12,8 +12,8 @@ function TextH1({ children, underline = false, style }) {
   return (
     <>
       <div>
-        <h2 style={{ color: colors.white, fontWeight: "bold", fontSize: 56, margin: 0, ...style }}>{children}</h2>
-        {underline && <div style={{ background: colors.mainGradient, height: 10, marginTop: -12 }} />}
+        <h2 style={{ color: colors.white, fontWeight: "bold", fontSize: 56, alignSelf: "flex-start", margin: 0, ...style }}>{children}</h2>
+        {underline && <div style={{ background: colors.mainGradient, height: 10, marginTop: -12, maxWidth: 550 }} />}
       </div>
     </>
   );
