@@ -24,7 +24,8 @@ function App() {
           </div>
           <div style={{ flexDirection: "row", display: "flex" }}>
             <Button variant="outline" style={{ color: "white", borderColor: colors.mainGradient }} color="#000" radius="md" uppercase>
-              Create competition
+              <div style={{ width: 10, height: 10, backgroundColor: "red" }}></div>
+              Connect wallet
             </Button>
           </div>
         </div>
