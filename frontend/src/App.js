@@ -18,9 +18,9 @@ function App() {
             >
               Create competition
             </Button>
-            <p style={{ marginRight: 15 }}>PROFILE</p>
-            <p style={{ marginRight: 15 }}>SUBMISSIONS</p>
-            <p style={{ marginRight: 15 }}>HISTORY</p>
+            <p style={{ margin: 30 }}>PROFILE</p>
+            <p style={{ margin: 30 }}>SUBMISSIONS</p>
+            <p style={{ margin: 30 }}>HISTORY</p>
           </div>
           <div style={{ flexDirection: "row", display: "flex" }}>
             <Button variant="outline" style={{ color: "white", borderColor: colors.mainGradient }} color="#000" radius="md" uppercase>
