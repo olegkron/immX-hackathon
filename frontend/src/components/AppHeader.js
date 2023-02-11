@@ -1,24 +1,30 @@
 //header with button "Create competition" on the left, and "Connect wallet" on the right.
 
-import { Button, Header } from "@mantine/core";
+import { Header } from "@mantine/core";
+import Button from "./Button";
 import React from "react";
 import colors from "../constants/colors";
+import { UserPlus, Plus } from "feather-icons-react";
 
 function AppHeader() {
   return (
-    <Header shadow="sm" style={{ backgroundColor: colors.background }} radius="md" padding="md">
+    <Header style={{ backgroundColor: colors.background }} radius="md">
       <div style={{ flexDirection: "row", display: "flex", justifyContent: "space-between", paddingHorizontal: 25, alignItems: "center" }}>
         <div style={{ flexDirection: "row", display: "flex", alignItems: "center" }}>
-          <Button variant="outline" style={{ borderColor: "white", display: "flex", marginRight: 15 }} color="#000" radius="md" uppercase>
-            Create competition
+          <Button style={{ marginRight: 15, fontSize: 20 }}>
+            <Plus size={24} style={{ marginRight: 10 }} />
+            <p style={{ fontSize: 20 }}>Create competition</p>
           </Button>
-          <p style={{ marginRight: 15 }}>PROFILE</p>
-          <p style={{ marginRight: 15 }}>SUBMISSIONS</p>
-          <p style={{ marginRight: 15 }}>HISTORY</p>
+          <p style={{ margin: 30, fontSize: 20 }}>PROFILE</p>
+          <p>|</p>
+          <p style={{ margin: 30, fontSize: 20 }}>SUBMISSIONS</p>
+          <p>|</p>
+          <p style={{ margin: 30, fontSize: 20 }}>HISTORY</p>
         </div>
         <div style={{ flexDirection: "row", display: "flex" }}>
-          <Button variant="outline" style={{ borderColor: colors.mainGradient }} color="#000" radius="md" uppercase>
-            Create competition
+          <Button style={{ borderImage: "linear-gradient(to right, #2560D2, #FF44F8, #FF4487) 1" }}>
+            <UserPlus size={24} style={{ marginRight: 10 }} />
+            <p style={{ fontSize: 20 }}>Create competition</p>
           </Button>
         </div>
       </div>
