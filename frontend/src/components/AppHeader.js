@@ -1,12 +1,17 @@
 //header with button "Create competition" on the left, and "Connect wallet" on the right.
 
 import { LogOut, Plus, UserPlus } from "feather-icons-react";
-import React from "react";
+import React, { useContext } from "react";
+import logo from "../assets/logo.png";
+import { navContext } from "../hooks/navContext";
+
 import Button from "./Button";
 
 function AppHeader({ onClickWallet, address, setWalletAddress, balance }) {
+  const { selectedScreen, setSelectedScreen } = useContext(navContext);
   return (
-    <div style={{ flexDirection: "row", display: "flex", justifyContent: "space-between", paddingHorizontal: 25, alignItems: "center" }}>
+    <div onClick={() => setSelectedScreen("main")} style={{ flexDirection: "row", display: "flex", justifyContent: "space-between", paddingHorizontal: 25, alignItems: "center" }}>
+      <img style={{ height: 30 }} src={logo} />
       <div style={{ flexDirection: "row", display: "flex", alignItems: "center" }}>
         <Button style={{ marginRight: 15, fontSize: 20, marginTop: 15 }}>
           <Plus size={24} style={{ marginRight: 10 }} />

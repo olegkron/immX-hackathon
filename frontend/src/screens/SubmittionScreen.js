@@ -1,7 +1,6 @@
 // main screen, displays big title underlined by a gradient line, subtitle
 
 import React from "react";
-import AppCard from "../components/AppCard";
 import Button from "../components/Button";
 
 import colors from "../constants/colors";
@@ -14,7 +13,7 @@ function SubmittionScreen() {
   return (
     <div style={{ flexDirection: "row", flex: 1, marginTop: 60, display: "flex", marginBottom: 100 }}>
       <div style={{ flex: 1 }}>
-        <TextH1 underline>Submittion Title</TextH1>
+        <TextH1 underline>Submission Title</TextH1>
         <p style={{ maxWidth: 750, fontSize: 30, marginTop: 50, marginBottom: 60 }}>
           {`Submission Description Aliquam erat volutpat. Etiam nisi risus, neleifend eget ornare eget, fringilla eget.
              Aliquam erat volutpat. Etiam nisi risus, eleifend eget ornare eget, fringilla eget.`}
