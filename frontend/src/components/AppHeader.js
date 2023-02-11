@@ -2,6 +2,7 @@
 
 import { Plus, UserPlus } from "feather-icons-react";
 import React from "react";
+import { Link } from "react-router-dom";
 import Button from "./Button";
 
 function AppHeader() {
@@ -12,6 +13,9 @@ function AppHeader() {
           <Plus size={24} style={{ marginRight: 10 }} />
           <p style={{ fontSize: 20 }}>CREATE COMPETITION</p>
         </Button>
+        {/* <Link to="/profile">
+          <p style={{ margin: 30, fontSize: 20 }}>PROFILE</p>
+        </Link> */}
         <p style={{ margin: 30, fontSize: 20 }}>PROFILE</p>
         <p>|</p>
         <p style={{ margin: 30, fontSize: 20 }}>SUBMISSIONS</p>
