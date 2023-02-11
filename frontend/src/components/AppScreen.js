@@ -5,7 +5,7 @@ import colors from "../constants/colors";
 
 function AppScreen({ children }) {
   return (
-    <div style={{ backgroundColor: colors.main, padding: 20 }}>
+    <div style={{ backgroundColor: colors.background, padding: 20 }}>
       <Text>{children}</Text>
     </div>
   );
