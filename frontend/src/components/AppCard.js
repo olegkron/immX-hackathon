@@ -8,7 +8,7 @@ import AppCounter from "./AppCounter";
 import Sticker from "./Sticker";
 function AppCard({ children, title, subtitle, lost = false, won = false, style }) {
   return (
-    <div style={{ position: "relative" }}>
+    <div onClick={() => console.log("abc")} style={{ position: "relative" }}>
       <Card
         shadow="md"
         style={{
