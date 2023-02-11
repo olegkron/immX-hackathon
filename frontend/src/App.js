@@ -3,13 +3,17 @@ import { useState } from "react";
 import "./App.css";
 import AppHeader from "./components/AppHeader";
 import AppScreen from "./components/AppScreen";
+import { navContext } from "./hooks/navContext";
 import CreateScreen from "./screens/CreateScreen";
 import MainScreen from "./screens/MainScreen";
+import ProfileScreen from "./screens/ProfileScreen";
+import SubmittionScreen from "./screens/SubmittionScreen";
 function App() {
   const [walletAddress, setWalletAddress] = useState(null);
   const [starkPublicKey, setStarkPublicKey] = useState("");
   const [walletBalance, setWalletBalance] = useState(null);
 
+  const [selectedScreen, setSelectedScreen] = useState("main");
   const linkAddress = "https://link.x.immutable.com";
   const apiAddress = "https://api.x.immutable.com/v1";
 
@@ -33,13 +37,15 @@ function App() {
   };
 
   return (
-    <AppScreen>
-      <AppHeader onClickWallet={getWalletData} address={walletAddress} setWalletAddress={setWalletAddress} balance={walletBalance} />
-      {/* <MainScreen /> */}
-      {/* <ProfileScreen /> */}
-      {/* <SubmittionScreen /> */}
-      <CreateScreen />
-    </AppScreen>
+    <navContext.Provider value={{ selectedScreen, setSelectedScreen }}>
+      <AppScreen>
+        <AppHeader onClickWallet={getWalletData} address={walletAddress} setWalletAddress={setWalletAddress} balance={walletBalance} />
+        {selectedScreen === "main" && <MainScreen />}
+        {selectedScreen === "profile" && <ProfileScreen />}
+        {selectedScreen === "submission" && <SubmittionScreen />}
+        {selectedScreen === "create" && <CreateScreen />}
+      </AppScreen>
+    </navContext.Provider>
   );
 }
 

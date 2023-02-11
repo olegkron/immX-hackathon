@@ -1,14 +1,17 @@
 // card with 14px borderRadius, 2px white stroke
 
 import { Card } from "@mantine/core";
-import React from "react";
+import React, { useContext } from "react";
 import colors from "../constants/colors";
+import { navContext } from "../hooks/navContext";
 import TextEyebrow from "../text/TextEyebrow";
 import AppCounter from "./AppCounter";
 import Sticker from "./Sticker";
-function AppCard({ children, title, subtitle, lost = false, won = false, style }) {
+function AppCard({ children, title, subtitle, lost = false, won = false, onClick, style }) {
+  const { selectedScreen, setSelectedScreen } = useContext(navContext);
+
   return (
-    <div style={{ position: "relative" }}>
+    <div onClick={() => setSelectedScreen("")} style={{ position: "relative" }}>
       <Card
         shadow="md"
         style={{

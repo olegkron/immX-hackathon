@@ -12,7 +12,7 @@ import colors from "../constants/colors";
 function ProfileScreen() {
   return (
     <div style={{ flexDirection: "row", flex: 1, marginTop: 60, display: "flex" }}>
-      <div style={{ flex: 3 }}>
+      <div style={{ flex: 3.4 }}>
         <p style={{ fontWeight: "bold", fontSize: 20 }}>PROFILE</p>
         <div style={{ width: 385, height: 385, marginTop: 30, marginBottom: 30, borderRadius: 17, backgroundColor: colors.darkGrey }} />
         <p style={{ fontWeight: "bold", fontSize: 64 }}>JOHN DOE</p>
@@ -34,7 +34,7 @@ function ProfileScreen() {
           </div>
         </div>
       </div>
-      <div style={{ flex: 6 }}>
+      <div style={{ flex: 5 }}>
         <p style={{ fontWeight: "bold", fontSize: 20 }}>REWARDS</p>
         <div style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 30 }}>
           <AppCard style={{ marginRight: 20, marginBottom: 30 }} title={"Logo task"} subtitle={"Intel"}>
