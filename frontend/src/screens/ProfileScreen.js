@@ -5,8 +5,6 @@ import AppCard from "../components/AppCard";
 import Button from "../components/Button";
 
 import colors from "../constants/colors";
-import TextBigSubtitle from "../text/BigSubtitle";
-import TextH1 from "../text/TextH1";
 // import colors from "../constants/colors";
 // import TextBigSubtitle from "../text/BigSubtitle";
 // import TextH1 from "../text/TextH1";
@@ -27,7 +25,7 @@ function ProfileScreen() {
             <p style={{ fontWeight: "bold", fontSize: 20, color: colors.white, marginLeft: 100 }}>12 FEB, 2023</p>
           </div>
           <div style={{ flexDirection: "row", marginTop: 25, justifyContent: "space-between" }}>
-            <p style={{ fontWeight: "bold", fontSize: 20, color: colors.lightGrey }}>SUBMITTIONS</p>
+            <p style={{ fontWeight: "bold", fontSize: 20, color: colors.lightGrey }}>SUBMISSIONS</p>
             <p style={{ fontWeight: "bold", fontSize: 20, color: colors.white, marginLeft: 100 }}>15</p>
           </div>
           <div style={{ flexDirection: "row", marginTop: 25, justifyContent: "space-between" }}>

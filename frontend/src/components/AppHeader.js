@@ -5,7 +5,7 @@ import React from "react";
 import colors from "../constants/colors";
 import Button from "./Button";
 
-function AppHeader({ onClickWallet }) {
+function AppHeader({ onClickWallet, address, balance }) {
   return (
     <div style={{ flexDirection: "row", display: "flex", justifyContent: "space-between", paddingHorizontal: 25, alignItems: "center" }}>
       <div style={{ flexDirection: "row", display: "flex", alignItems: "center" }}>
@@ -23,7 +23,14 @@ function AppHeader({ onClickWallet }) {
         <p style={{ margin: 30, fontSize: 20 }}>HISTORY</p>
       </div>
       <div style={{ flexDirection: "row", display: "flex" }}>
-        <Button onClick={onClickWallet} style={{ backgroundColor: colors.background, borderImage: "linear-gradient(to right, #2560D2, #FF44F8, #FF4487) 1" }}>
+        <Button
+          onClick={onClickWallet}
+          style={{
+            backgroundColor: colors.background,
+            background: "linear-gradient(white, white) padding-box, linear-gradient(to right, #2560D2, #FF44F8, #FF4487) 1  border-box",
+            // border: "4px solid transparent",
+          }}
+        >
           <UserPlus size={24} style={{ marginRight: 10 }} />
           <p style={{ fontSize: 20 }}>CONNECT WALLET</p>
         </Button>

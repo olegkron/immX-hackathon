@@ -5,7 +5,6 @@ export default function Button({ children, style, onClick }) {
     <button
       onClick={onClick}
       style={{
-        ...style,
         background: "transparent",
         border: "2px solid",
         borderRadius: 14,
@@ -15,6 +14,7 @@ export default function Button({ children, style, onClick }) {
         padding: "15px 30px",
         alignItems: "center",
         justifyContent: "center",
+        ...style,
       }}
     >
       {children}

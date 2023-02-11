@@ -1,35 +1,32 @@
-import { Config, ImmutableX } from "@imtbl/core-sdk";
+import { ImmutableXClient, Link } from "@imtbl/imx-sdk";
 import { useState } from "react";
 import "./App.css";
 import AppHeader from "./components/AppHeader";
 import AppScreen from "./components/AppScreen";
-import MainScreen from "./screens/MainScreen";
 import ProfileScreen from "./screens/ProfileScreen";
-import SubmittionScreen from "./screens/SubmittionScreen";
 function App() {
+  const [address, setAddress] = useState("");
+  const [starkPublicKey, setStarkPublicKey] = useState("");
   const [balance, setBalance] = useState(0);
-  const [account, setAccount] = useState(null);
 
-  const handleConnect = async () => {
-    const config = new Config({
-      network: "testnet",
-      rpcUrl: "https://rpc.testnet.immutable.com",
-      chainId: "testnet",
-    });
-    const immutableX = new ImmutableX(config);
-    const accounts = await immutableX.getAccounts();
-    const account = accounts[0];
-    setAccount(account);
-    const balance = await immutableX.getBalance(account);
+  const linkAddress = "https://link.x.immutable.com";
+  const apiAddress = "https://api.x.immutable.com/v1";
+
+  const getWalletData = async () => {
+    const link = new Link(linkAddress);
+    const client = await ImmutableXClient.build({ publicApiUrl: apiAddress });
+
+    const { address, starkPublicKey } = await link.setup({});
+    let balance = await client.getBalance({ address, starkPublicKey });
+    setAddress(address);
+    setStarkPublicKey(starkPublicKey);
     setBalance(balance);
   };
-
   return (
     <AppScreen>
-      <AppHeader />
-      <MainScreen />
-      {/* <ProfileScreen /> */}
-      {/* <SubmittionScreen /> */}
+      <AppHeader onClickWallet={getWalletData} address={address} balance={balance} />
+      {/* <MainScreen /> */}
+      <ProfileScreen />
     </AppScreen>
   );
 }
