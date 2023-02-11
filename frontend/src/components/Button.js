@@ -6,7 +6,7 @@ export default function Button({ children, style }) {
       style={{
         ...style,
         background: "transparent",
-        border: "1px solid",
+        border: "2px solid",
         borderRadius: 14,
         color: "white",
         borderColor: "white",
