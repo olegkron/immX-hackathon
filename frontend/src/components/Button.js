@@ -6,7 +6,8 @@ export default function Button({ children, style, onClick }) {
     <button
       onClick={onClick}
       style={{
-        background: colors.background,
+        alignSelf: "flex-start",
+        background: "transparent",
         border: "2px solid",
         borderRadius: 14,
         color: "white",

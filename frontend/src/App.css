@@ -24,6 +24,12 @@ p {
   color: white;
   margin: 0;
 }
+input::placeholder {
+  color: white;
+
+  opacity: 1;
+  font-family: "JetBrains Mono", monospace;
+}
 
 div {
   display: flex;
