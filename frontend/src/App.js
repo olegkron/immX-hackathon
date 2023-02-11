@@ -4,7 +4,7 @@ import "./App.css";
 import AppHeader from "./components/AppHeader";
 import AppScreen from "./components/AppScreen";
 import MainScreen from "./screens/MainScreen";
-
+import ProfileScreen from "./screens/ProfileScreen";
 function App() {
   // use immx wallet sdk to connect to wallet
 
@@ -31,8 +31,9 @@ function App() {
 
   return (
     <AppScreen>
-      <AppHeader onClickWallet={handleConnect} />
-      <MainScreen />
+      <AppHeader />
+      {/* <MainScreen /> */}
+      <ProfileScreen />
     </AppScreen>
   );
 }

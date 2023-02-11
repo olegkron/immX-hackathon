@@ -10,7 +10,7 @@ import TextH1 from "../text/TextH1";
 function MainScreen() {
   return (
     <>
-      <div style={{ backgroundColor: colors.main, alignItems: "flex-start", marginTop: 100 }}>
+      <div style={{ alignItems: "flex-start", marginTop: 100 }}>
         <TextH1 underline>Showcase</TextH1>
         <TextBigSubtitle style={{ marginTop: 20, maxWidth: 550 }}>Brings opportunities to talent and best results to businesses.</TextBigSubtitle>
         <TextEyebrow style={{ marginTop: 80 }}>BROWSE COMPETITIONS</TextEyebrow>
