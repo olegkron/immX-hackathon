@@ -2,7 +2,6 @@
 
 import { Plus, UserPlus } from "feather-icons-react";
 import React from "react";
-import colors from "../constants/colors";
 import Button from "./Button";
 
 function AppHeader({ onClickWallet, address, balance }) {
@@ -23,12 +22,9 @@ function AppHeader({ onClickWallet, address, balance }) {
         <p style={{ margin: 30, fontSize: 20 }}>HISTORY</p>
       </div>
       <div style={{ flexDirection: "row", display: "flex" }}>
-        <Button
-          onClick={onClickWallet}
-          style={{ backgroundColor: colors.background, borderImage: "linear-gradient(to right, #2560D2, #FF44F8, #FF4487) 1" }}
-        >
+        <Button onClick={onClickWallet}>
           <UserPlus size={24} style={{ marginRight: 10 }} />
-          <p style={{ fontSize: 20 }}>CONNECT WALLET</p>
+          <p style={{ fontSize: 20 }}>{address ? address : "CONNECT WALLET"}</p>
         </Button>
       </div>
     </div>

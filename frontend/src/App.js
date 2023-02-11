@@ -4,29 +4,36 @@ import "./App.css";
 import AppHeader from "./components/AppHeader";
 import AppScreen from "./components/AppScreen";
 import CreateScreen from "./screens/CreateScreen";
-import ProfileScreen from "./screens/ProfileScreen";
-import SubmittionScreen from "./screens/SubmittionScreen";
 function App() {
-  const [address, setAddress] = useState("");
+  const [walletAddress, setWalletAddress] = useState(null);
   const [starkPublicKey, setStarkPublicKey] = useState("");
-  const [balance, setBalance] = useState(0);
+  const [walletBalance, setWalletBalance] = useState(null);
 
   const linkAddress = "https://link.x.immutable.com";
   const apiAddress = "https://api.x.immutable.com/v1";
 
-  const getWalletData = async () => {
-    const link = new Link(linkAddress);
-    const client = await ImmutableXClient.build({ publicApiUrl: apiAddress });
+  function shortenAddress(address) {
+    return address.slice(0, 6) + "..." + address.slice(-6);
+  }
 
-    const { address, starkPublicKey } = await link.setup({});
-    let balance = await client.getBalance({ address, starkPublicKey });
-    setAddress(address);
-    setStarkPublicKey(starkPublicKey);
-    setBalance(balance);
+  const getWalletData = async () => {
+    try {
+      const link = new Link(linkAddress);
+      const client = await ImmutableXClient.build({ publicApiUrl: apiAddress });
+
+      const { address, starkPublicKey } = await link.setup({});
+      setWalletAddress(shortenAddress(address));
+      const balance = await client.listBalances({ user: address });
+      setStarkPublicKey(starkPublicKey);
+      setWalletBalance(balance.remaining);
+    } catch (e) {
+      console.log(e);
+    }
   };
+
   return (
     <AppScreen>
-      <AppHeader />
+      <AppHeader onClickWallet={getWalletData} address={walletAddress} balance={walletBalance} />
       {/* <MainScreen /> */}
       {/* <ProfileScreen /> */}
       {/* <SubmittionScreen /> */}
