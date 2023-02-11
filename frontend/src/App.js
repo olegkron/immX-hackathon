@@ -5,6 +5,7 @@ import AppHeader from "./components/AppHeader";
 import AppScreen from "./components/AppScreen";
 import MainScreen from "./screens/MainScreen";
 import ProfileScreen from "./screens/ProfileScreen";
+import SubmittionScreen from "./screens/SubmittionScreen";
 function App() {
   const [balance, setBalance] = useState(0);
   const [account, setAccount] = useState(null);
@@ -26,8 +27,9 @@ function App() {
   return (
     <AppScreen>
       <AppHeader />
-      {/* <MainScreen /> */}
-      <ProfileScreen />
+      <MainScreen />
+      {/* <ProfileScreen /> */}
+      {/* <SubmittionScreen /> */}
     </AppScreen>
   );
 }

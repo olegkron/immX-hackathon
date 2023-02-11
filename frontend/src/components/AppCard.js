@@ -21,7 +21,7 @@ function AppCard({ children, title, subtitle, lost = false, won = false, style }
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
-        borderImage: colors.mainGradient,
+        borderImage: colors.cardGradient,
 
         ...style,
       }}
