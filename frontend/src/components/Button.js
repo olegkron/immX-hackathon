@@ -1,8 +1,9 @@
 import React from "react";
 
-export default function Button({ children, style }) {
+export default function Button({ children, style, onClick }) {
   return (
     <button
+      onClick={onClick}
       style={{
         ...style,
         background: "transparent",

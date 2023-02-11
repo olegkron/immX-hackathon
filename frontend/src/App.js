@@ -1,32 +1,26 @@
+import { Config, ImmutableX } from "@imtbl/core-sdk";
 import { useState } from "react";
-import Web3 from "web3";
 import "./App.css";
 import AppHeader from "./components/AppHeader";
 import AppScreen from "./components/AppScreen";
 import MainScreen from "./screens/MainScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 function App() {
-  // use immx wallet sdk to connect to wallet
-
-  const web3 = new Web3(window.ethereum);
-
   const [balance, setBalance] = useState(0);
-  const [accounts, setAccounts] = useState([]);
+  const [account, setAccount] = useState(null);
 
   const handleConnect = async () => {
-    try {
-      if (typeof window.ethereum === "undefined") {
-        window.alert("Please install MetaMask first.");
-        return;
-      }
-      await window.ethereum.enable();
-      const accounts = await web3.eth.getAccounts();
-      setAccounts(accounts);
-      const balance = await web3.eth.getBalance(accounts[0]);
-      setBalance(balance);
-    } catch (error) {
-      console.error(error);
-    }
+    const config = new Config({
+      network: "testnet",
+      rpcUrl: "https://rpc.testnet.immutable.com",
+      chainId: "testnet",
+    });
+    const immutableX = new ImmutableX(config);
+    const accounts = await immutableX.getAccounts();
+    const account = accounts[0];
+    setAccount(account);
+    const balance = await immutableX.getBalance(account);
+    setBalance(balance);
   };
 
   return (
