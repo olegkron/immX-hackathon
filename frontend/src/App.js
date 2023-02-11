@@ -3,6 +3,7 @@ import { useState } from "react";
 import "./App.css";
 import AppHeader from "./components/AppHeader";
 import AppScreen from "./components/AppScreen";
+import CreateScreen from "./screens/CreateScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import SubmittionScreen from "./screens/SubmittionScreen";
 function App() {
@@ -28,7 +29,8 @@ function App() {
       <AppHeader />
       {/* <MainScreen /> */}
       {/* <ProfileScreen /> */}
-      <SubmittionScreen />
+      {/* <SubmittionScreen /> */}
+      <CreateScreen />
     </AppScreen>
   );
 }
