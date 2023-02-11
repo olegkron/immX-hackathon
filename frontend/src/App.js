@@ -33,7 +33,7 @@ function App() {
 
   return (
     <AppScreen>
-      <AppHeader onClickWallet={getWalletData} address={walletAddress} balance={walletBalance} />
+      <AppHeader onClickWallet={getWalletData} address={walletAddress} setWalletAddress={setWalletAddress} balance={walletBalance} />
       {/* <MainScreen /> */}
       {/* <ProfileScreen /> */}
       {/* <SubmittionScreen /> */}
