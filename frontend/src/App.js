@@ -2,19 +2,8 @@ import { Button, Text } from "@mantine/core";
 import "./App.css";
 import AppScreen from "./components/AppScreen";
 import colors from "./constants/colors";
-// import { makeStyles } from "@material-ui/core/styles";
 
 function App() {
-  // const useStyles = makeStyles({
-  //   whiteButton: {
-  //     backgroundColor: "white",
-  //     color: "black",
-  //     "&:hover": {
-  //       backgroundColor: "#E0E0E0",
-  //     },
-  //   },
-  // });
-  // const classes = useStyles();
   return (
     <AppScreen>
       <div className="App" style={{ backgroundColor: colors.main }}>
