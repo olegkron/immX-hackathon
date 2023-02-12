@@ -33,7 +33,9 @@ function SubmittionScreen() {
         </div>
       </div>
 
-      <div style={{ border: "2px solid white", backgroundColor: colors.grey, borderRadius: 10, marginBottom: 40, flex: 1 }}></div>
+      <div style={{ border: "2px solid white", borderRadius: 10, marginBottom: 40, padding: 0, flex: 1, overflow: "hidden", alignItems: "center" }}>
+        <img style={{ flex: 1, top: 0, borderRadius: 5, maxWidth: 900, height: 500, objectFit: "fill" }} src={submissionData.imageUrl} />
+      </div>
     </div>
   );
 }

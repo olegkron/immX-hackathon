@@ -64,6 +64,7 @@ function CompetitionScreen() {
                 date={submission.dateSubmitted}
                 description={submission.description}
                 author={submission.author}
+                uri={submission.imageUri}
                 submission={submission}
               />
             ))}

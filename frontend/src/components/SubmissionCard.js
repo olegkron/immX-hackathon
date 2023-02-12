@@ -17,6 +17,7 @@ function SubmissionCard({
   won = false,
   participants,
   date,
+  uri,
   prize,
   competition,
   onClick,
@@ -33,15 +34,19 @@ function SubmissionCard({
           borderRadius: 10,
           border: "2px solid white",
           width: 370,
-          minHeight: 290,
-          maxHeight: 545,
-          padding: 20,
+          // minHeight: 290,
+          // maxHeight: 545,
+          height: 290,
+
           display: "flex",
           flexDirection: "column",
-          justifyContent: "space-between",
+          padding: 10,
+
           ...style,
         }}
-      ></Card>
+      >
+        <img style={{ flex: 1, top: 0, borderRadius: 5 }} resizeMode="stretch" src={submission.imageUrl} />
+      </Card>
 
       <div style={{ marginTop: 20 }}>
         <TextEyebrow style={{ marginTop: 0 }}>{title}</TextEyebrow>

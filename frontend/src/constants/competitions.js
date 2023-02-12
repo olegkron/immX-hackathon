@@ -16,9 +16,10 @@ export const competitions = [
   },
   {
     id: 2,
-    title: "Illustration",
-    subtitle: "Microsoft",
-    description: "Create an illustration that captures the essence of Microsoft",
+    title: "Photography",
+    subtitle: "The Times",
+    description:
+      "Find the most facsinating view of your city. Be as creative as possible, let your inner photographer out. The Best works will be published",
     participants: 56,
     submissions: submissions,
 
