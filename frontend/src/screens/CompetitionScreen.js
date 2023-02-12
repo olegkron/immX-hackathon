@@ -9,6 +9,7 @@ import colors from "../constants/colors";
 import TextH1 from "../text/TextH1";
 import { TextInput } from "@mantine/core";
 import { navContext } from "../hooks/navContext";
+import SubmissionCard from "../components/SubmissionCard";
 // import colors from "../constants/colors";
 // import TextBigSubtitle from "../text/BigSubtitle";
 // import TextH1 from "../text/TextH1";
@@ -55,7 +56,7 @@ function CompetitionScreen() {
           <p style={{ fontSize: 24, marginTop: 60, fontWeight: "bold" }}>SUBMISSIONS</p>
           <div style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 30 }}>
             {competData.submissions.map((submission) => (
-              <AppCard
+              <SubmissionCard
                 key={submission.id}
                 style={{ marginRight: 20 }}
                 title={submission.title}
@@ -63,29 +64,9 @@ function CompetitionScreen() {
                 date={submission.dateSubmitted}
                 description={submission.description}
                 author={submission.author}
+                submission={submission}
               />
             ))}
-            <AppCard style={{ marginRight: 20, marginBottom: 30 }} title={"Logo task"} subtitle={"Intel"}>
-              <div style={{ width: 385, height: 385, backgroundColor: colors.darkGrey }} />
-            </AppCard>
-            <AppCard style={{ marginRight: 20, marginBottom: 30 }} title={"Logo task"} subtitle={"Intel"}>
-              <div style={{ width: 385, height: 385, backgroundColor: colors.darkGrey }} />
-            </AppCard>
-            <AppCard style={{ marginRight: 20, marginBottom: 30 }} title={"Logo task"} subtitle={"Intel"}>
-              <div style={{ width: 385, height: 385, backgroundColor: colors.darkGrey }} />
-            </AppCard>
-            <AppCard style={{ marginRight: 20, marginBottom: 30 }} title={"Logo task"} subtitle={"Intel"}>
-              <div style={{ width: 385, height: 385, backgroundColor: colors.darkGrey }} />
-            </AppCard>
-            <AppCard style={{ marginRight: 20, marginBottom: 30 }} title={"Logo task"} subtitle={"Intel"}>
-              <div style={{ width: 385, height: 385, backgroundColor: colors.darkGrey }} />
-            </AppCard>
-            <AppCard style={{ marginRight: 20, marginBottom: 30 }} title={"Logo task"} subtitle={"Intel"}>
-              <div style={{ width: 385, height: 385, backgroundColor: colors.darkGrey }} />
-            </AppCard>
-            <AppCard style={{ marginRight: 20, marginBottom: 30 }} title={"Logo task"} subtitle={"Intel"}>
-              <div style={{ width: 385, height: 385, backgroundColor: colors.darkGrey }} />
-            </AppCard>
           </div>
         </div>
 
