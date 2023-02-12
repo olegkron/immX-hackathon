@@ -10,21 +10,29 @@ import Button from "./Button";
 function AppHeader({ onClickWallet, address, setWalletAddress, balance }) {
   const { selectedScreen, setSelectedScreen } = useContext(navContext);
   return (
-    <div onClick={() => setSelectedScreen("main")} style={{ flexDirection: "row", display: "flex", justifyContent: "space-between", paddingHorizontal: 25, alignItems: "center" }}>
-      <img style={{ height: 30 }} src={logo} />
+    <div style={{ flexDirection: "row", display: "flex", justifyContent: "space-between", paddingHorizontal: 25, alignItems: "center" }}>
       <div style={{ flexDirection: "row", display: "flex", alignItems: "center" }}>
-        <Button style={{ marginRight: 15, fontSize: 20, marginTop: 15 }}>
+        <button onClick={() => setSelectedScreen("main")} style={{ background: "none", color: "inherit", border: "none" }}>
+          <img style={{ height: 40, marginRight: 30 }} src={logo} />
+        </button>
+        <Button onClick={() => setSelectedScreen("create")} style={{ marginRight: 15, fontSize: 20, marginTop: 15 }}>
           <Plus size={24} style={{ marginRight: 10 }} />
           <p style={{ fontSize: 20 }}>CREATE COMPETITION</p>
         </Button>
         {/* <Link to="/profile">
           <p style={{ margin: 30, fontSize: 20 }}>PROFILE</p>
         </Link> */}
-        <p style={{ margin: 30, fontSize: 20 }}>PROFILE</p>
+        <button onClick={() => setSelectedScreen("profile")} style={{ background: "none", color: "inherit", border: "none" }}>
+          <p style={{ margin: 30, fontSize: 20 }}>PROFILE</p>
+        </button>
         <p>|</p>
-        <p style={{ margin: 30, fontSize: 20 }}>SUBMISSIONS</p>
+        <button onClick={() => setSelectedScreen("profile")} style={{ background: "none", color: "inherit", border: "none" }}>
+          <p style={{ margin: 30, fontSize: 20 }}>SUBMISSIONS</p>
+        </button>
         <p>|</p>
-        <p style={{ margin: 30, fontSize: 20 }}>HISTORY</p>
+        <button onClick={() => setSelectedScreen("profile")} style={{ background: "none", color: "inherit", border: "none" }}>
+          <p style={{ margin: 30, fontSize: 20 }}>HISTORY</p>
+        </button>
       </div>
       <div style={{ flexDirection: "row", display: "flex" }}>
         <Button onClick={address ? () => setWalletAddress(null) : onClickWallet}>

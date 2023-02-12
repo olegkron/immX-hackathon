@@ -11,7 +11,7 @@ function AppCard({ children, title, subtitle, lost = false, won = false, partici
   const { selectedScreen, setSelectedScreen } = useContext(navContext);
 
   return (
-    <div onClick={() => setSelectedScreen("")} style={{ position: "relative" }}>
+    <div onClick={() => setSelectedScreen("competition")} style={{ position: "relative" }}>
       <Card
         shadow="md"
         style={{
@@ -39,8 +39,20 @@ function AppCard({ children, title, subtitle, lost = false, won = false, partici
           <AppCounter title={date} iconName={"calendar"} />
         </div>
       </Card>
-      {lost && <Sticker iconName="frown" style={{ backgroundColor: colors.darkGrey, position: "absolute", zIndex: 2, top: -10, right: 10, rotate: "-9deg" }} text={"LOST"} />}
-      {won && <Sticker iconName="award" style={{ background: colors.mainGradient, position: "absolute", zIndex: 2, top: -10, right: 10, rotate: "-9deg" }} text={"WON"} />}
+      {lost && (
+        <Sticker
+          iconName="frown"
+          style={{ backgroundColor: colors.darkGrey, position: "absolute", zIndex: 2, top: -10, right: 10, rotate: "-9deg" }}
+          text={"LOST"}
+        />
+      )}
+      {won && (
+        <Sticker
+          iconName="award"
+          style={{ background: colors.mainGradient, position: "absolute", zIndex: 2, top: -10, right: 10, rotate: "-9deg" }}
+          text={"WON"}
+        />
+      )}
     </div>
   );
 }

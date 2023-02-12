@@ -14,7 +14,7 @@ function App() {
   const [starkPublicKey, setStarkPublicKey] = useState("");
   const [walletBalance, setWalletBalance] = useState(null);
 
-  const [selectedScreen, setSelectedScreen] = useState("competition");
+  const [selectedScreen, setSelectedScreen] = useState("main");
   const linkAddress = "https://link.x.immutable.com";
   const apiAddress = "https://api.x.immutable.com/v1";
 
