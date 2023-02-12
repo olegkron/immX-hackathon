@@ -1,3 +1,4 @@
+import { submissions } from "./submissions";
 export const competitions = [
   {
     id: 1,
@@ -6,8 +7,10 @@ export const competitions = [
     description: "Design the perfect logo for Netflix",
     participants: 42,
     prize: 15000,
+    submissions: submissions,
     date: "12 FEB, 2023",
     duration: "10 DAYS",
+
     lost: false,
     won: true,
   },
@@ -17,6 +20,8 @@ export const competitions = [
     subtitle: "Microsoft",
     description: "Create an illustration that captures the essence of Microsoft",
     participants: 56,
+    submissions: submissions,
+
     prize: 25000,
     date: "30 MAR, 2023",
     duration: "11 DAYS",
@@ -29,6 +34,8 @@ export const competitions = [
     subtitle: "OpenAI",
     description: "Create an animated short showcasing the potential of OpenAI's technology",
     participants: 23,
+    submissions: submissions,
+
     prize: 14000,
     date: "2 MAR, 2023",
     duration: "14 DAYS",
@@ -41,6 +48,8 @@ export const competitions = [
     subtitle: "Meta",
     description: "Design a graphic that represents the future of augmented and virtual reality",
     participants: 36,
+    submissions: submissions,
+
     prize: 12000,
     date: "3 APR, 2023",
     duration: "17 DAYS",
@@ -54,6 +63,8 @@ export const competitions = [
     description: "Design a user interface for a new Google product",
     participants: 40,
     prize: 30000,
+    submissions: submissions,
+
     date: "14 MAR, 2023",
     duration: "16 DAYS",
     lost: false,
@@ -66,6 +77,8 @@ export const competitions = [
     description: "Submit your best photos taken on an Apple device",
     participants: 12,
     prize: 7000,
+    submissions: submissions,
+
     date: "15 MAR, 2023",
     duration: "19 DAYS",
     lost: false,
@@ -107,6 +120,45 @@ export const competitionHistory = [
     prize: 2600,
     date: "3 APR, 2023",
     duration: "10 DAYS",
+    lost: false,
+    won: true,
+  },
+];
+export const wonCompetitions = [
+  {
+    id: 1,
+    title: "Logo Design",
+    subtitle: "Netflix",
+    description: "Design the perfect logo for Netflix",
+    participants: 42,
+    prize: 15000,
+    date: "12 FEB",
+    lost: false,
+    won: true,
+  },
+  {
+    id: 9,
+    title: "Content Writing",
+    subtitle: "Uber",
+    description: "Write an article about the future of transportation with Uber",
+    participants: 13,
+    prize: 2600,
+    date: "3 APR",
+    image: "https://i.imgur.com/3ZQ3Z9M.png",
+    lost: false,
+    won: true,
+  },
+  {
+    id: 10,
+    title: "Logo Design",
+    subtitle: "Google",
+    description: "Design the perfect logo for Google",
+    participants: 42,
+    prize: 15000,
+
+    date: "3 APR, 2023",
+    duration: "10 DAYS",
+
     lost: false,
     won: true,
   },

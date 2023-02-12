@@ -54,6 +54,17 @@ function CompetitionScreen() {
         <div>
           <p style={{ fontSize: 24, marginTop: 60, fontWeight: "bold" }}>SUBMISSIONS</p>
           <div style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 30 }}>
+            {competData.submissions.map((submission) => (
+              <AppCard
+                key={submission.id}
+                style={{ marginRight: 20 }}
+                title={submission.title}
+                imageUri={submission.imageUri}
+                date={submission.dateSubmitted}
+                description={submission.description}
+                author={submission.author}
+              />
+            ))}
             <AppCard style={{ marginRight: 20, marginBottom: 30 }} title={"Logo task"} subtitle={"Intel"}>
               <div style={{ width: 385, height: 385, backgroundColor: colors.darkGrey }} />
             </AppCard>
