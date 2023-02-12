@@ -42,11 +42,11 @@ function CompetitionScreen() {
               </div>
               <div style={{ flexDirection: "row", marginTop: 35, justifyContent: "space-between", alignItems: "center" }}>
                 <p style={{ fontWeight: "bold", fontSize: 20, color: colors.lightGrey }}>PRIZE</p>
-                <p style={{ fontWeight: "bold", fontSize: 20, color: colors.white }}>4000$</p>
+                <p style={{ fontWeight: "bold", fontSize: 20, color: colors.white }}>{`${competData.prize} $`}</p>
               </div>
               <div style={{ flexDirection: "row", marginTop: 35, justifyContent: "space-between", alignItems: "center" }}>
                 <p style={{ fontWeight: "bold", fontSize: 20, color: colors.lightGrey }}>SUBMISSIONS</p>
-                <p style={{ fontWeight: "bold", fontSize: 20, color: colors.white }}>15</p>
+                <p style={{ fontWeight: "bold", fontSize: 20, color: colors.white }}>{competData.participants}</p>
               </div>
             </div>
           </div>
@@ -64,6 +64,7 @@ function CompetitionScreen() {
                 date={submission.dateSubmitted}
                 description={submission.description}
                 author={submission.author}
+                uri={submission.imageUri}
                 submission={submission}
               />
             ))}

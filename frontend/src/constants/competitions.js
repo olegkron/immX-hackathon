@@ -16,9 +16,10 @@ export const competitions = [
   },
   {
     id: 2,
-    title: "Illustration",
-    subtitle: "Microsoft",
-    description: "Create an illustration that captures the essence of Microsoft",
+    title: "Photography",
+    subtitle: "The Times",
+    description:
+      "Find the most facsinating view of your city. Be as creative as possible, let your inner photographer out. The Best works will be published",
     participants: 56,
     submissions: submissions,
 
@@ -95,6 +96,8 @@ export const competitionHistory = [
     participants: 20,
     prize: 2500,
     date: "28 FEB",
+    submissions: submissions,
+
     image: "https://i.imgur.com/3ZQ3Z9M.png",
     lost: true,
     won: false,
@@ -110,9 +113,12 @@ export const competitionHistory = [
     duration: "10 DAYS",
     lost: true,
     won: false,
+    submissions: submissions,
   },
   {
     id: 9,
+    submissions: submissions,
+
     title: "Content Writing",
     subtitle: "Uber",
     description: "Write an article about the future of transportation with Uber",
