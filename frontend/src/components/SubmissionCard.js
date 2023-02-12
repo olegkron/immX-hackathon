@@ -45,7 +45,7 @@ function SubmissionCard({
           ...style,
         }}
       >
-        <img style={{ flex: 1, top: 0, borderRadius: 5 }} resizeMode="stretch" src={submission.imageUrl} />
+        <img style={{ flex: 1, top: 0, borderRadius: 5, objectFit: "cover" }} src={submission.imageUrl} />
       </Card>
 
       <div style={{ marginTop: 20 }}>

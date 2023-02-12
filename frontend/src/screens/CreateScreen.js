@@ -1,16 +1,20 @@
 // main screen, displays big title underlined by a gradient line, subtitle
 
-import React from "react";
+import React, { useContext, useState } from "react";
 import AppTextInput from "../components/AppTextInput";
 import Button from "../components/Button";
 
 import colors from "../constants/colors";
+import { navContext } from "../hooks/navContext";
 import TextH1 from "../text/TextH1";
+import { competitions } from "../constants/competitions";
 // import colors from "../constants/colors";
 // import TextBigSubtitle from "../text/BigSubtitle";
 // import TextH1 from "../text/TextH1";
 
 function CreateScreen({ sendTransaction }) {
+  const [data, setData] = useState({ title: "Competition" });
+  const { setSelectedScreen, setCompetData } = useContext(navContext);
   return (
     <div style={{ flexDirection: "row", flex: 1, marginTop: 60, display: "flex", marginBottom: 100 }}>
       <div style={{ flex: 1 }}>
@@ -18,7 +22,11 @@ function CreateScreen({ sendTransaction }) {
         <p style={{ maxWidth: 750, fontSize: 30, marginTop: 50, marginBottom: 60 }}>{`Provide description and requirements for your competition.`}</p>
         <div style={{ flexDirection: "row" }}>
           <div>
-            <AppTextInput style={{ width: 400 }} placeholder="Competition name" />
+            <AppTextInput
+              style={{ width: 400 }}
+              placeholder="Competition name"
+              onChange={(event) => [setData({ ...data, title: event.target.value }), console.log(event.target.value)]}
+            />
             <AppTextInput
               style={{
                 width: 400,
@@ -50,7 +58,10 @@ function CreateScreen({ sendTransaction }) {
           </div>
         </div>
 
-        <Button onClick={() => sendTransaction("0x2170ed0880ac9a755fd29b2688956bd959f933f8", 1000)} style={{ marginTop: 120 }}>
+        <Button
+          onClick={() => [setSelectedScreen("competition"), setCompetData({ ...competitions[1], title: data.title })]}
+          style={{ marginTop: 120 }}
+        >
           <p style={{ fontWeight: "bold", fontSize: 20 }}>SUBMIT COMPETITION</p>
         </Button>
       </div>
