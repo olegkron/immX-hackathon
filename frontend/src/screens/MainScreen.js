@@ -2,11 +2,10 @@
 
 import React from "react";
 import AppCard from "../components/AppCard";
-import colors from "../constants/colors";
+import { competitionHistory, competitions } from "../constants/competitions";
 import TextBigSubtitle from "../text/BigSubtitle";
 import TextEyebrow from "../text/TextEyebrow";
 import TextH1 from "../text/TextH1";
-
 function MainScreen() {
   return (
     <>
@@ -14,17 +13,35 @@ function MainScreen() {
         <TextH1 underline>Showcase</TextH1>
         <TextBigSubtitle style={{ marginTop: 20, maxWidth: 550 }}>Brings opportunities to talent and best results to businesses.</TextBigSubtitle>
         <TextEyebrow style={{ marginTop: 80 }}>BROWSE COMPETITIONS</TextEyebrow>
-        <div style={{ flexDirection: "row" }}>
-          <AppCard style={{ marginRight: 20 }} title={"Logo task"} subtitle={"Intel"} />
-          <AppCard style={{ marginRight: 20 }} title={"Logo task"} subtitle={"Intel"} />
-          <AppCard style={{ marginRight: 20 }} title={"Logo task"} subtitle={"Intel"} />
+        <div style={{ flexDirection: "row", flexWrap: "wrap" }}>
+          {competitions.map((competition) => (
+            <AppCard
+              key={competition.id}
+              style={{ marginRight: 20, marginBottom: 20 }}
+              title={competition.title}
+              subtitle={competition.subtitle}
+              participants={competition.participants}
+              date={competition.date}
+              prize={competition.prize}
+            />
+          ))}
         </div>
 
         <TextEyebrow style={{ marginTop: 80 }}>COMPETITION HISTORY</TextEyebrow>
         <div style={{ flexDirection: "row" }}>
-          <AppCard won style={{ marginRight: 20 }} title={"Logo task"} subtitle={"Intel"} />
-          <AppCard won style={{ marginRight: 20 }} title={"Logo task"} subtitle={"Intel"} />
-          <AppCard lost style={{ marginRight: 20 }} title={"Logo task"} subtitle={"Intel"} />
+          {competitionHistory.map((competition) => (
+            <AppCard
+              key={competition.id}
+              style={{ marginRight: 20 }}
+              title={competition.title}
+              subtitle={competition.subtitle}
+              participants={competition.participants}
+              date={competition.date}
+              prize={competition.prize}
+              lost={competition.lost}
+              won={competition.won}
+            />
+          ))}
         </div>
       </div>
     </>

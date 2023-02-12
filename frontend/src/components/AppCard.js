@@ -7,7 +7,7 @@ import { navContext } from "../hooks/navContext";
 import TextEyebrow from "../text/TextEyebrow";
 import AppCounter from "./AppCounter";
 import Sticker from "./Sticker";
-function AppCard({ children, title, subtitle, lost = false, won = false, onClick, style }) {
+function AppCard({ children, title, subtitle, lost = false, won = false, participants, date, prize, onClick, style }) {
   const { selectedScreen, setSelectedScreen } = useContext(navContext);
 
   return (
@@ -31,12 +31,12 @@ function AppCard({ children, title, subtitle, lost = false, won = false, onClick
         {children && <div style={{ width: "100%", marginBottom: 10, height: 300, borderRadius: 17, overflow: "hidden" }}>{children}</div>}
         <div>
           <TextEyebrow style={{ margin: 0 }}>{title}</TextEyebrow>
-          <TextEyebrow style={{ color: colors.grey, margin: 0 }}>{subtitle}</TextEyebrow>
+          <TextEyebrow style={{ color: colors.lightGrey, margin: 0 }}>{subtitle}</TextEyebrow>
         </div>
         <div style={{ flexDirection: "row", justifyContent: "space-between" }}>
-          <AppCounter title={"12"} iconName={"users"} />
-          <AppCounter title={"3000"} iconName={"dollar-sign"} />
-          <AppCounter title={"12 FEB"} iconName={"calendar"} />
+          <AppCounter title={participants} iconName={"users"} />
+          <AppCounter title={prize} iconName={"dollar-sign"} />
+          <AppCounter title={date} iconName={"calendar"} />
         </div>
       </Card>
       {lost && <Sticker iconName="frown" style={{ backgroundColor: colors.darkGrey, position: "absolute", zIndex: 2, top: -10, right: 10, rotate: "-9deg" }} text={"LOST"} />}

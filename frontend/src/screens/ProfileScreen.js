@@ -1,19 +1,22 @@
 // main screen, displays big title underlined by a gradient line, subtitle
 
-import React from "react";
+import React, { useContext } from "react";
 import AppCard from "../components/AppCard";
 import Button from "../components/Button";
-
 import colors from "../constants/colors";
+import { navContext } from "../hooks/navContext";
 // import colors from "../constants/colors";
 // import TextBigSubtitle from "../text/BigSubtitle";
 // import TextH1 from "../text/TextH1";
 
 function ProfileScreen() {
+  const { setSelectedScreen } = useContext(navContext);
   return (
     <div style={{ flexDirection: "row", flex: 1, marginTop: 60, display: "flex" }}>
-      <div style={{ flex: 3.4 }}>
-        <p style={{ fontWeight: "bold", fontSize: 20 }}>PROFILE</p>
+      <div onClick={() => [console.log("aaaa"), setSelectedScreen("profile")]} style={{ flex: 3.4 }}>
+        <a>
+          <p style={{ fontWeight: "bold", fontSize: 20 }}>PROFILE</p>
+        </a>
         <div style={{ width: 385, height: 385, marginTop: 30, marginBottom: 30, borderRadius: 17, backgroundColor: colors.darkGrey }} />
         <p style={{ fontWeight: "bold", fontSize: 64 }}>JOHN DOE</p>
         <Button style={{ width: 155, marginTop: 25 }}>
