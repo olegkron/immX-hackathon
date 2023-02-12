@@ -28,7 +28,7 @@ const starkSigner = createStarkSigner(starkPrivateKey);
 
 // Make the trade
 
-const createTrade = async (wallet: WalletConnection, orderId: number) => {
+const createTrade = async (wallet: WalletConnection, ) => {
   const ethAddress = await wallet.ethSigner.getAddress();
   const tradeData = {
     order_id: orderId,
@@ -39,4 +39,9 @@ const createTrade = async (wallet: WalletConnection, orderId: number) => {
   return response;
 };
 
-module.exports = [createTrade];
+createTrade()
+  .then(() => process.exit(0))
+  .catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });

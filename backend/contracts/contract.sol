@@ -1,23 +1,33 @@
-pragma solidity ^0.6.12;
-
-import "https://github.com/Immutable-Labs/immutablex-contracts-library/blob/master/contracts/ImmutableX.sol";
-import "https://github.com/OpenZeppelin/openzeppelin-solidity/contracts/math/SafeMath.sol";
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.9;
 
 contract ArtCompetition {
-    using SafeMath for uint256;
-    
+    // competition variables
     uint256 public deadline;
     uint256 public prizePool;
-    address public winner;
-    mapping (address => uint256) public submissions;
+    address payable public winner;
+    address payable public creator;
+    address payable private owner;
+
+    mapping(address => uint256) public submissions;
+
+    event CompetitionCreated(address indexed creator);
     event NewSubmission(address indexed submitter, uint256 timestamp);
     event WinnerSelected(address indexed winner, uint256 prize);
-    ImmutableX immutablex;
 
-    constructor(uint256 _deadline, uint256 _prizePool) public {
+    // constructor
+    constructor() {
+        owner = msg.sender;
+    }
+
+    // function for users to create competition
+    // we dont make it only owner because anyone can create a competition
+
+    function createCompetition(uint256 _deadline, uint256 _prizePool) public {
         deadline = _deadline;
         prizePool = _prizePool;
-        immutablex = ImmutableX.create();
+        creator = msg.sender;
+        emit CompetitionCreated(msg.sender);
     }
 
     function submit(string memory _art) public {
@@ -26,17 +36,14 @@ contract ArtCompetition {
         emit NewSubmission(msg.sender, now);
     }
 
-    function selectWinner() public {
+    function sendWinner(address payable _winner) public {
         require(now > deadline, "The deadline for submissions has not passed.");
-        uint256 maxTime = 0;
-        for (address submitter in submissions) {
-            if (submissions[submitter] > maxTime) {
-                maxTime = submissions[submitter];
-                winner = submitter;
-            }
-        }
-        winner.transfer(prizePool);
+        require(
+            msg.sender == creator,
+            "You are not the creator of this competition"
+        );
+        winner = _winner;
+        transfer({value: prizePool, to: winner});
         emit WinnerSelected(winner, prizePool);
-        immutablex.mint(winner, prizePool, _art);
     }
 }
