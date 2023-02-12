@@ -26,27 +26,57 @@ function CompetitionScreen() {
 Aliquam erat volutpat. Etiam nisi risus, eleifend eget ornare eget, fringilla eget.`}</p>
           </div>
           <div style={{ flex: 1, paddingTop: 20 }}>
-            <div style={{ marginLeft: 150 }}>
+            <div style={{ marginLeft: 150, alignSelf: "flex-start" }}>
               <div style={{ flexDirection: "row", marginTop: 5, alignItems: "center" }}>
-                <p style={{ fontWeight: "bold", fontSize: 20, color: colors.white }}>START DATE</p>
-                <AppTextInput style={{ marginLeft: 20, width: 230 }} placeholder="28.03.2023" />
+                <p style={{ fontWeight: "bold", fontSize: 20, color: colors.lightGrey }}>START DATE</p>
+                <p style={{ fontWeight: "bold", fontSize: 20, color: colors.white, marginLeft: 40 }}>12 FEB, 2023</p>
               </div>
               <div style={{ flexDirection: "row", marginTop: 35, justifyContent: "space-between", alignItems: "center" }}>
-                <p style={{ fontWeight: "bold", fontSize: 20, color: colors.white }}>END DATE</p>
-                <AppTextInput style={{ marginLeft: 20, width: 230 }} placeholder="04.04.2023" />
+                <p style={{ fontWeight: "bold", fontSize: 20, color: colors.lightGrey }}>DURATION</p>
+                <p style={{ fontWeight: "bold", fontSize: 20, color: colors.white }}>15 DAYS</p>
               </div>
               <div style={{ flexDirection: "row", marginTop: 35, justifyContent: "space-between", alignItems: "center" }}>
-                <p style={{ fontWeight: "bold", fontSize: 20, color: colors.white }}>WINNERS</p>
-                <AppTextInput style={{ marginLeft: 20, width: 230 }} placeholder="3" />
+                <p style={{ fontWeight: "bold", fontSize: 20, color: colors.lightGrey }}>WINNERS</p>
+                <p style={{ fontWeight: "bold", fontSize: 20, color: colors.white }}>3</p>
               </div>
               <div style={{ flexDirection: "row", marginTop: 35, justifyContent: "space-between", alignItems: "center" }}>
-                <p style={{ fontWeight: "bold", fontSize: 20, color: colors.white }}>PRIZE</p>
-                <AppTextInput style={{ marginLeft: 20, width: 230 }} placeholder="4000$" />
+                <p style={{ fontWeight: "bold", fontSize: 20, color: colors.lightGrey }}>PRIZE</p>
+                <p style={{ fontWeight: "bold", fontSize: 20, color: colors.white }}>4000$</p>
+              </div>
+              <div style={{ flexDirection: "row", marginTop: 35, justifyContent: "space-between", alignItems: "center" }}>
+                <p style={{ fontWeight: "bold", fontSize: 20, color: colors.lightGrey }}>SUBMISSIONS</p>
+                <p style={{ fontWeight: "bold", fontSize: 20, color: colors.white }}>15</p>
               </div>
             </div>
           </div>
         </div>
         <div style={{ height: 1, backgroundColor: colors.mediumGrey }} />
+        <div>
+          <p style={{ fontSize: 24, marginTop: 60, fontWeight: "bold" }}>SUBMISSIONS</p>
+          <div style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 30 }}>
+            <AppCard style={{ marginRight: 20, marginBottom: 30 }} title={"Logo task"} subtitle={"Intel"}>
+              <div style={{ width: 385, height: 385, backgroundColor: colors.darkGrey }} />
+            </AppCard>
+            <AppCard style={{ marginRight: 20, marginBottom: 30 }} title={"Logo task"} subtitle={"Intel"}>
+              <div style={{ width: 385, height: 385, backgroundColor: colors.darkGrey }} />
+            </AppCard>
+            <AppCard style={{ marginRight: 20, marginBottom: 30 }} title={"Logo task"} subtitle={"Intel"}>
+              <div style={{ width: 385, height: 385, backgroundColor: colors.darkGrey }} />
+            </AppCard>
+            <AppCard style={{ marginRight: 20, marginBottom: 30 }} title={"Logo task"} subtitle={"Intel"}>
+              <div style={{ width: 385, height: 385, backgroundColor: colors.darkGrey }} />
+            </AppCard>
+            <AppCard style={{ marginRight: 20, marginBottom: 30 }} title={"Logo task"} subtitle={"Intel"}>
+              <div style={{ width: 385, height: 385, backgroundColor: colors.darkGrey }} />
+            </AppCard>
+            <AppCard style={{ marginRight: 20, marginBottom: 30 }} title={"Logo task"} subtitle={"Intel"}>
+              <div style={{ width: 385, height: 385, backgroundColor: colors.darkGrey }} />
+            </AppCard>
+            <AppCard style={{ marginRight: 20, marginBottom: 30 }} title={"Logo task"} subtitle={"Intel"}>
+              <div style={{ width: 385, height: 385, backgroundColor: colors.darkGrey }} />
+            </AppCard>
+          </div>
+        </div>
 
         {/* <div style={{ flexDirection: "row" }}>
           <div>
@@ -81,10 +111,6 @@ Aliquam erat volutpat. Etiam nisi risus, eleifend eget ornare eget, fringilla eg
             </div>
           </div>
         </div> */}
-
-        <Button style={{ marginTop: 120 }}>
-          <p style={{ fontWeight: "bold", fontSize: 20 }}>PICK AS A WINNER</p>
-        </Button>
       </div>
     </div>
   );

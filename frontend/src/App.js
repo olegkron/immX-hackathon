@@ -4,6 +4,7 @@ import "./App.css";
 import AppHeader from "./components/AppHeader";
 import AppScreen from "./components/AppScreen";
 import { navContext } from "./hooks/navContext";
+import CompetitionScreen from "./screens/CompetitionScreen";
 import CreateScreen from "./screens/CreateScreen";
 import MainScreen from "./screens/MainScreen";
 import ProfileScreen from "./screens/ProfileScreen";
@@ -13,7 +14,7 @@ function App() {
   const [starkPublicKey, setStarkPublicKey] = useState("");
   const [walletBalance, setWalletBalance] = useState(null);
 
-  const [selectedScreen, setSelectedScreen] = useState("main");
+  const [selectedScreen, setSelectedScreen] = useState("competition");
   const linkAddress = "https://link.x.immutable.com";
   const apiAddress = "https://api.x.immutable.com/v1";
 
@@ -44,6 +45,7 @@ function App() {
         {selectedScreen === "profile" && <ProfileScreen />}
         {selectedScreen === "submission" && <SubmittionScreen />}
         {selectedScreen === "create" && <CreateScreen />}
+        {selectedScreen === "competition" && <CompetitionScreen />}
       </AppScreen>
     </navContext.Provider>
   );
