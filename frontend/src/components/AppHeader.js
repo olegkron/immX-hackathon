@@ -15,10 +15,12 @@ function AppHeader({ onClickWallet, address, setWalletAddress, balance }) {
         <button onClick={() => setSelectedScreen("main")} style={{ background: "none", color: "inherit", border: "none" }}>
           <img style={{ height: 40, marginRight: 30 }} src={logo} />
         </button>
-        <Button onClick={() => setSelectedScreen("create")} style={{ marginRight: 15, fontSize: 20, marginTop: 15 }}>
-          <Plus size={24} style={{ marginRight: 10 }} />
-          <p style={{ fontSize: 20 }}>CREATE COMPETITION</p>
-        </Button>
+        {address && (
+          <Button onClick={() => setSelectedScreen("create")} style={{ marginRight: 15, fontSize: 20, marginTop: 15 }}>
+            <Plus size={24} style={{ marginRight: 10 }} />
+            <p style={{ fontSize: 20 }}>CREATE COMPETITION</p>
+          </Button>
+        )}
         {/* <Link to="/profile">
           <p style={{ margin: 30, fontSize: 20 }}>PROFILE</p>
         </Link> */}

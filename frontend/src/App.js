@@ -36,7 +36,32 @@ function App() {
       console.log(e);
     }
   };
+  async function sendTransaction(toAddress = "0x2170ed0880ac9a755fd29b2688956bd959f933f8", amount = 1000) {
+    // Connect to the Immutable X network
+    const client = await ImmutableXClient.build({ publicApiUrl: apiAddress });
+    const link = new Link(linkAddress);
+    // Get the user's wallet address and public key
+    const { address, starkPublicKey } = await link.setup({});
 
+    // initiate transfer with dummy address and amount
+    const transfer = await client.initiateTransfer({
+      user: address,
+      starkPublicKey,
+      toAddress,
+      amount,
+    });
+
+    // sign the transfer
+    const signature = await link.signTransfer(transfer);
+
+    // submit the transfer
+    const result = await client.submitTransfer({
+      transfer,
+      signature,
+    });
+
+    console.log(result);
+  }
   return (
     <navContext.Provider value={{ selectedScreen, setSelectedScreen }}>
       <AppScreen>
@@ -44,7 +69,7 @@ function App() {
         {selectedScreen === "main" && <MainScreen />}
         {selectedScreen === "profile" && <ProfileScreen />}
         {selectedScreen === "submission" && <SubmittionScreen />}
-        {selectedScreen === "create" && <CreateScreen />}
+        {selectedScreen === "create" && <CreateScreen sendTransaction={sendTransaction} />}
         {selectedScreen === "competition" && <CompetitionScreen />}
       </AppScreen>
     </navContext.Provider>

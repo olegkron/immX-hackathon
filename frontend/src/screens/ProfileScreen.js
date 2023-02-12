@@ -4,6 +4,7 @@ import React, { useContext } from "react";
 import AppCard from "../components/AppCard";
 import Button from "../components/Button";
 import colors from "../constants/colors";
+import { wonCompetitions } from "../constants/competitions";
 import { navContext } from "../hooks/navContext";
 // import colors from "../constants/colors";
 // import TextBigSubtitle from "../text/BigSubtitle";
@@ -18,9 +19,9 @@ function ProfileScreen() {
           <p style={{ fontWeight: "bold", fontSize: 20 }}>PROFILE</p>
         </a>
         <div style={{ width: 385, height: 385, marginTop: 30, marginBottom: 30, borderRadius: 17, backgroundColor: colors.darkGrey }} />
-        <p style={{ fontWeight: "bold", fontSize: 64 }}>JOHN DOE</p>
+        <p style={{ fontWeight: "bold", fontSize: 64 }}>Noël Royer</p>
         <Button style={{ width: 155, marginTop: 25 }}>
-          <p style={{ fontWeight: "regilar", fontSize: 32 }}>Artist</p>
+          <p style={{ fontWeight: "regilar", fontSize: 24 }}>Artist</p>
         </Button>
         <div style={{ width: "70%" }}>
           <div style={{ flexDirection: "row", marginTop: 65, justifyContent: "space-between" }}>
@@ -40,24 +41,21 @@ function ProfileScreen() {
       <div style={{ flex: 5 }}>
         <p style={{ fontWeight: "bold", fontSize: 20 }}>REWARDS</p>
         <div style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 30 }}>
-          <AppCard style={{ marginRight: 20, marginBottom: 30 }} title={"Logo task"} subtitle={"Intel"}>
-            <div style={{ width: 385, height: 385, backgroundColor: colors.darkGrey }} />
-          </AppCard>
-          <AppCard style={{ marginRight: 20, marginBottom: 30 }} title={"Logo task"} subtitle={"Intel"}>
-            <div style={{ width: 385, height: 385, backgroundColor: colors.darkGrey }} />
-          </AppCard>
-          <AppCard style={{ marginRight: 20, marginBottom: 30 }} title={"Logo task"} subtitle={"Intel"}>
-            <div style={{ width: 385, height: 385, backgroundColor: colors.darkGrey }} />
-          </AppCard>
-          <AppCard style={{ marginRight: 20, marginBottom: 30 }} title={"Logo task"} subtitle={"Intel"}>
-            <div style={{ width: 385, height: 385, backgroundColor: colors.darkGrey }} />
-          </AppCard>
-          <AppCard style={{ marginRight: 20, marginBottom: 30 }} title={"Logo task"} subtitle={"Intel"}>
-            <div style={{ width: 385, height: 385, backgroundColor: colors.darkGrey }} />
-          </AppCard>
-          <AppCard style={{ marginRight: 20, marginBottom: 30 }} title={"Logo task"} subtitle={"Intel"}>
-            <div style={{ width: 385, height: 385, backgroundColor: colors.darkGrey }} />
-          </AppCard>
+          {wonCompetitions.map((competition) => (
+            <AppCard
+              key={competition.id}
+              style={{ marginRight: 20, marginBottom: 20 }}
+              title={competition.title}
+              subtitle={competition.subtitle}
+              participants={competition.participants}
+              date={competition.date}
+              prize={competition.prize}
+              lost={competition.lost}
+              won={competition.won}
+            >
+              <div style={{ flex: 1, backgroundColor: colors.darkGrey }} />
+            </AppCard>
+          ))}
         </div>
       </div>
     </div>

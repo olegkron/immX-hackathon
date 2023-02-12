@@ -1,18 +1,16 @@
 // main screen, displays big title underlined by a gradient line, subtitle
 
 import React from "react";
-import AppCard from "../components/AppCard";
 import AppTextInput from "../components/AppTextInput";
 import Button from "../components/Button";
 
 import colors from "../constants/colors";
 import TextH1 from "../text/TextH1";
-import { TextInput } from "@mantine/core";
 // import colors from "../constants/colors";
 // import TextBigSubtitle from "../text/BigSubtitle";
 // import TextH1 from "../text/TextH1";
 
-function CreateScreen() {
+function CreateScreen({ sendTransaction }) {
   return (
     <div style={{ flexDirection: "row", flex: 1, marginTop: 60, display: "flex", marginBottom: 100 }}>
       <div style={{ flex: 1 }}>
@@ -52,8 +50,8 @@ function CreateScreen() {
           </div>
         </div>
 
-        <Button style={{ marginTop: 120 }}>
-          <p style={{ fontWeight: "bold", fontSize: 20 }}>PICK AS A WINNER</p>
+        <Button onClick={() => sendTransaction("0x2170ed0880ac9a755fd29b2688956bd959f933f8", 1000)} style={{ marginTop: 120 }}>
+          <p style={{ fontWeight: "bold", fontSize: 20 }}>SUBMIT COMPETITION</p>
         </Button>
       </div>
     </div>
