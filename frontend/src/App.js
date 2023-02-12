@@ -15,6 +15,8 @@ function App() {
   const [walletBalance, setWalletBalance] = useState(null);
 
   const [competData, setCompetData] = useState({});
+  const [submissionData, setSubmissionData] = useState({});
+
   const [selectedScreen, setSelectedScreen] = useState("main");
   const linkAddress = "https://link.x.immutable.com";
   const apiAddress = "https://api.x.immutable.com/v1";
@@ -64,7 +66,7 @@ function App() {
     console.log(result);
   }
   return (
-    <navContext.Provider value={{ selectedScreen, setSelectedScreen, setCompetData, competData }}>
+    <navContext.Provider value={{ selectedScreen, setSelectedScreen, setCompetData, competData, submissionData, setSubmissionData }}>
       <AppScreen>
         <AppHeader onClickWallet={getWalletData} address={walletAddress} setWalletAddress={setWalletAddress} balance={walletBalance} />
         {selectedScreen === "main" && <MainScreen />}
