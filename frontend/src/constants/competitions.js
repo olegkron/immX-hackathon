@@ -1,5 +1,6 @@
 export const competitions = [
   {
+    id: 1,
     title: "Logo Design",
     subtitle: "Netflix",
     description: "Design the perfect logo for Netflix",
@@ -10,6 +11,7 @@ export const competitions = [
     won: true,
   },
   {
+    id: 2,
     title: "Illustration",
     subtitle: "Microsoft",
     description: "Create an illustration that captures the essence of Microsoft",
@@ -20,6 +22,7 @@ export const competitions = [
     won: false,
   },
   {
+    id: 3,
     title: "Animation",
     subtitle: "OpenAI",
     description: "Create an animated short showcasing the potential of OpenAI's technology",
@@ -30,6 +33,7 @@ export const competitions = [
     won: false,
   },
   {
+    id: 4,
     title: "Graphic Design",
     subtitle: "Meta",
     description: "Design a graphic that represents the future of augmented and virtual reality",
@@ -40,6 +44,7 @@ export const competitions = [
     won: false,
   },
   {
+    id: 5,
     title: "UI/UX Design",
     subtitle: "Google",
     description: "Design a user interface for a new Google product",
@@ -50,6 +55,7 @@ export const competitions = [
     won: false,
   },
   {
+    id: 6,
     title: "Photography",
     subtitle: "Apple",
     description: "Submit your best photos taken on an Apple device",
@@ -63,6 +69,7 @@ export const competitions = [
 
 export const competitionHistory = [
   {
+    id: 7,
     title: "Web Development",
     subtitle: "Amazon",
     description: "Develop a new feature for Amazon's website",
@@ -73,6 +80,7 @@ export const competitionHistory = [
     won: false,
   },
   {
+    id: 8,
     title: "Mobile App Development",
     subtitle: "Facebook",
     description: "Develop a new feature for Facebook's mobile app",
@@ -83,6 +91,7 @@ export const competitionHistory = [
     won: false,
   },
   {
+    id: 9,
     title: "Content Writing",
     subtitle: "Uber",
     description: "Write an article about the future of transportation with Uber",
