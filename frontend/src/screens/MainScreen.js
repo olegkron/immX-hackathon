@@ -23,6 +23,7 @@ function MainScreen() {
               participants={competition.participants}
               date={competition.date}
               prize={competition.prize}
+              competition={competition}
             />
           ))}
         </div>
@@ -40,6 +41,7 @@ function MainScreen() {
               prize={competition.prize}
               lost={competition.lost}
               won={competition.won}
+              competition={competition}
             />
           ))}
         </div>

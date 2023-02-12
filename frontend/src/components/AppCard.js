@@ -7,11 +7,11 @@ import { navContext } from "../hooks/navContext";
 import TextEyebrow from "../text/TextEyebrow";
 import AppCounter from "./AppCounter";
 import Sticker from "./Sticker";
-function AppCard({ children, title, subtitle, lost = false, won = false, participants, date, prize, onClick, style }) {
-  const { selectedScreen, setSelectedScreen } = useContext(navContext);
+function AppCard({ children, title, subtitle, lost = false, won = false, participants, date, prize, competition, onClick, style }) {
+  const { selectedScreen, setSelectedScreen, setCompetData } = useContext(navContext);
 
   return (
-    <div onClick={() => setSelectedScreen("competition")} style={{ position: "relative" }}>
+    <div onClick={() => [setSelectedScreen("competition"), setCompetData(competition)]} style={{ position: "relative" }}>
       <Card
         shadow="md"
         style={{
@@ -36,7 +36,7 @@ function AppCard({ children, title, subtitle, lost = false, won = false, partici
         <div style={{ flexDirection: "row", justifyContent: "space-between" }}>
           <AppCounter title={participants} iconName={"users"} />
           <AppCounter title={prize} iconName={"dollar-sign"} />
-          <AppCounter title={date} iconName={"calendar"} />
+          <AppCounter title={date ? date.substring(0, date.indexOf(",")) : ""} iconName={"calendar"} />
         </div>
       </Card>
       {lost && (

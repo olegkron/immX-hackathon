@@ -1,6 +1,6 @@
 // main screen, displays big title underlined by a gradient line, subtitle
 
-import React from "react";
+import React, { useContext } from "react";
 import AppCard from "../components/AppCard";
 import AppTextInput from "../components/AppTextInput";
 import Button from "../components/Button";
@@ -8,32 +8,32 @@ import Button from "../components/Button";
 import colors from "../constants/colors";
 import TextH1 from "../text/TextH1";
 import { TextInput } from "@mantine/core";
+import { navContext } from "../hooks/navContext";
 // import colors from "../constants/colors";
 // import TextBigSubtitle from "../text/BigSubtitle";
 // import TextH1 from "../text/TextH1";
 
 function CompetitionScreen() {
+  const { competData } = useContext(navContext);
+  console.log(competData);
   return (
     <div style={{ flexDirection: "row", flex: 1, marginTop: 60, display: "flex", marginBottom: 100 }}>
       <div style={{ flex: 1 }}>
-        <p style={{ fontSize: 30 }}>COMPETITON BY INTEL</p>
+        <p style={{ fontSize: 30 }}>{competData.subtitle}</p>
         <div style={{ flexDirection: "row" }}>
           <div style={{ flex: 1 }}>
-            <TextH1 underline>Logo for a service</TextH1>
-            <p
-              style={{ maxWidth: 750, fontSize: 30, marginTop: 50, marginBottom: 60 }}
-            >{`Competition Description Aliquam erat volutpat. Etiam nisi risus, eleifend eget ornare eget, fringilla eget. 
-Aliquam erat volutpat. Etiam nisi risus, eleifend eget ornare eget, fringilla eget.`}</p>
+            <TextH1 underline>{competData.title}</TextH1>
+            <p style={{ maxWidth: 750, fontSize: 30, marginTop: 50, marginBottom: 60 }}>{competData.description}</p>
           </div>
           <div style={{ flex: 1, paddingTop: 20 }}>
             <div style={{ marginLeft: 150, alignSelf: "flex-start" }}>
               <div style={{ flexDirection: "row", marginTop: 5, alignItems: "center" }}>
                 <p style={{ fontWeight: "bold", fontSize: 20, color: colors.lightGrey }}>START DATE</p>
-                <p style={{ fontWeight: "bold", fontSize: 20, color: colors.white, marginLeft: 40 }}>12 FEB, 2023</p>
+                <p style={{ fontWeight: "bold", fontSize: 20, color: colors.white, marginLeft: 40 }}>{competData.date}</p>
               </div>
               <div style={{ flexDirection: "row", marginTop: 35, justifyContent: "space-between", alignItems: "center" }}>
                 <p style={{ fontWeight: "bold", fontSize: 20, color: colors.lightGrey }}>DURATION</p>
-                <p style={{ fontWeight: "bold", fontSize: 20, color: colors.white }}>15 DAYS</p>
+                <p style={{ fontWeight: "bold", fontSize: 20, color: colors.white }}>{competData.duration}</p>
               </div>
               <div style={{ flexDirection: "row", marginTop: 35, justifyContent: "space-between", alignItems: "center" }}>
                 <p style={{ fontWeight: "bold", fontSize: 20, color: colors.lightGrey }}>WINNERS</p>
@@ -50,7 +50,7 @@ Aliquam erat volutpat. Etiam nisi risus, eleifend eget ornare eget, fringilla eg
             </div>
           </div>
         </div>
-        <div style={{ height: 1, backgroundColor: colors.mediumGrey }} />
+        <div style={{ height: 1, backgroundColor: colors.mediumGrey, marginTop: 80 }} />
         <div>
           <p style={{ fontSize: 24, marginTop: 60, fontWeight: "bold" }}>SUBMISSIONS</p>
           <div style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 30 }}>
