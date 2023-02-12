@@ -12,7 +12,11 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "express": "^4.18.2"
+    "@imtbl/core-sdk": "^1.0.1",
+    "@imtbl/wallet-sdk-web": "^0.1.12",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "hardhat": "^2.12.7"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
