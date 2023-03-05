@@ -8,6 +8,7 @@ import CompetitionScreen from "./screens/CompetitionScreen";
 import CreateScreen from "./screens/CreateScreen";
 import MainScreen from "./screens/MainScreen";
 import ProfileScreen from "./screens/ProfileScreen";
+import SiteScreen from "./screens/SiteScreen";
 import SubmittionScreen from "./screens/SubmittionScreen";
 function App() {
   const [walletAddress, setWalletAddress] = useState(null);
@@ -68,12 +69,16 @@ function App() {
   return (
     <navContext.Provider value={{ selectedScreen, setSelectedScreen, setCompetData, competData, submissionData, setSubmissionData }}>
       <AppScreen>
-        <AppHeader onClickWallet={getWalletData} address={walletAddress} setWalletAddress={setWalletAddress} balance={walletBalance} />
+        <SiteScreen />
+
+        {/* <div class="shadow">Welcome</div> */}
+
+        {/* <AppHeader onClickWallet={getWalletData} address={walletAddress} setWalletAddress={setWalletAddress} balance={walletBalance} />
         {selectedScreen === "main" && <MainScreen />}
         {selectedScreen === "profile" && <ProfileScreen />}
         {selectedScreen === "submission" && <SubmittionScreen />}
         {selectedScreen === "create" && <CreateScreen sendTransaction={sendTransaction} />}
-        {selectedScreen === "competition" && <CompetitionScreen />}
+        {selectedScreen === "competition" && <CompetitionScreen />} */}
       </AppScreen>
     </navContext.Provider>
   );

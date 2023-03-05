@@ -8,13 +8,13 @@
 import React from "react";
 import colors from "../constants/colors";
 
-function TextH1({ children, underline = false, style }) {
+function TextH1({ children, underline = false, style, medium, bold, id }) {
   return (
     <>
-      <div style={{ alignSelf: "flex-start" }}>
-        <h2 style={{ color: colors.white, fontWeight: "bold", fontSize: 56, margin: 0, ...style }}>{children}</h2>
-        {underline && <div style={{ background: colors.mainGradient, height: 10, marginTop: -12 }} />}
-      </div>
+      <h2 id={id} style={{ color: colors.white, fontWeight: medium ? 500 : bold ? 600 : 400, margin: 0, ...style }}>
+        {children}
+      </h2>
+      {underline && <div style={{ background: colors.mainGradient, height: 10, marginTop: -12 }} />}
     </>
   );
 }
