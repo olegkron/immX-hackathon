@@ -6,3 +6,4 @@ var w = window.innerWidth;
 ScrollReveal().reveal("h1", textOptions);
 ScrollReveal().reveal(".shadow", imageOptions);
 w > 900 && ScrollReveal().reveal(".second-image-container", imageSlideOptions);
+ScrollReveal().reveal(".journeyImgContainer", imageSlideOptions);
