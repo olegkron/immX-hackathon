@@ -43,7 +43,11 @@ h1.bold {
 .shadow {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-
+.site-screen {
+  flex: 1;
+  max-width: 1500px;
+  align-self: center;
+}
 /* style the second container */
 .second-container {
   display: flex;
@@ -211,7 +215,9 @@ div {
 }
 
 #header-text {
-  font-size: 4.5rem;
+  font-weight: 600;
+  line-height: 8vh;
+  text-align: center;
 }
 .custom-underline {
   position: relative;
@@ -476,19 +482,27 @@ div {
     justify-content: center;
     flex-direction: column;
     margin-bottom: 0px;
-
+    /* max-width: 90%; */
+    align-self: center;
     margin-top: 50px;
     padding: 40px 0px;
 
     /* align-items: center; */
   }
+  .img_container {
+    max-width: 90%;
+    align-self: center;
+  }
 
   .second-image-container {
     transform: rotate(0deg);
+
     margin-top: 40px;
     min-height: 100px;
     min-width: 100px;
+
     position: relative;
+
     right: 0px;
   }
   #second-container-text {
@@ -558,5 +572,9 @@ div {
   }
   #find-tallent-text {
     max-width: 100%;
+  }
+  #header-text {
+    line-height: 4vh;
+    text-align: center;
   }
 }
